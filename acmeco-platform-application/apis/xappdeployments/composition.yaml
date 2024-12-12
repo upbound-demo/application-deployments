@@ -1,0 +1,19 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: xappdeployments.platform.upbound.io
+spec:
+  compositeTypeRef:
+    apiVersion: platform.upbound.io/v1
+    kind: XAppDeployment
+  mode: Pipeline
+  pipeline:
+  - functionRef:
+      name: crossplane-by-example-acmeco-platform-applicationsbucket
+    step: bucket
+  - functionRef:
+      name: crossplane-by-example-acmeco-platform-applicationspplication
+    step: application
+  - functionRef:
+      name: crossplane-contrib-function-auto-ready
+    step: crossplane-contrib-function-auto-ready

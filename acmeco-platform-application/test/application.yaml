@@ -1,0 +1,17 @@
+kcl_options:
+  - key: params
+    value: 
+      oxr:
+        spec:
+          application:
+            name: example
+            image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+          resources:
+          - name: images
+            type: s3
+            s3:
+              bucketName: murph-images-bucket
+          - name: database
+            type: postgres
+            postgres: {}
+      ctx: {}

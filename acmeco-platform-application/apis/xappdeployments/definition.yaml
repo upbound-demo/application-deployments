@@ -1,0 +1,58 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xappdeployments.platform.upbound.io
+spec:
+  claimNames:
+    kind: AppDeployment
+    plural: appdeployments
+  group: platform.upbound.io
+  names:
+    categories:
+    - crossplane
+    kind: XAppDeployment
+    plural: xappdeployments
+  versions:
+  - name: v1
+    referenceable: true
+    schema:
+      openAPIV3Schema:
+        description: AppDeployment is the Schema for the AppDeployment API.
+        properties:
+          spec:
+            description: AppDeploymentSpec defines the desired state of AppDeployment.
+            properties:
+              application:
+                properties:
+                  name:
+                    type: string
+                  image:
+                    type: string
+                  deploymentPatch:
+                    type: string
+                type: object
+              resources:
+                items:
+                  properties:
+                    name:
+                      type: string
+                    type:
+                      type: string
+                      enum: ["s3", "postgres"]
+                    s3:
+                      type: object
+                      properties:
+                        bucketName:
+                          type: string
+                    postgres:
+                      type: object
+                  type: object
+                type: array
+            type: object
+          status:
+            description: AppDeploymentStatus defines the observed state of AppDeployment.
+            type: object
+        required:
+        - spec
+        type: object
+    served: true
