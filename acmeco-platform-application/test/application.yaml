@@ -6,6 +6,13 @@ kcl_options:
           application:
             name: example
             image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+            deploymentPatch: |
+              spec:
+                template:
+                  spec:
+                    containers:
+                    - name: sidecar
+                      image: envoy
           resources:
           - name: images
             type: s3

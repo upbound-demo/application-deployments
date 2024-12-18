@@ -9,10 +9,7 @@ spec:
   mode: Pipeline
   pipeline:
   - functionRef:
-      name: crossplane-by-example-acmeco-platform-applicationsbucket
-    step: bucket
-  - functionRef:
-      name: crossplane-by-example-acmeco-platform-applicationspplication
+      name: acmeco-platform-acmeco-platform-applicationsapplication
     step: application
   - functionRef:
       name: crossplane-contrib-function-auto-ready

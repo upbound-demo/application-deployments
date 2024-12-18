@@ -1,7 +1,6 @@
-import models.io.upbound.platform.v1 as platform
 import models.io.upbound.aws.s3.v1beta2 as s3
 
-app_deployment = platform.XAppDeployment{**option("params").oxr}.spec
+app_deployment = option("params").oxr.spec
 
 _buckets = filter b in app_deployment.resources {
     b.type == "s3"

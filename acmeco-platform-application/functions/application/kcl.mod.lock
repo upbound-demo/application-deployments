@@ -3,6 +3,10 @@
     name = "k8s"
     full_name = "k8s_1.31.2"
     version = "1.31.2"
+    sum = "xBZgPsnpVVyWBpahuPQHReeRx28eUHGFoaPeqbct+vs="
+    reg = "ghcr.io"
+    repo = "kcl-lang/k8s"
+    oci_tag = "1.31.2"
   [dependencies.models]
     name = "models"
     full_name = "models_0.0.1"
@@ -11,3 +15,7 @@
     name = "strategic_merge_patch"
     full_name = "strategic_merge_patch_0.1.1"
     version = "0.1.1"
+    sum = "ShCE30XjUQ8qbVB8TIbDDMkO+dQRR98JaS/vwVn3fI0="
+    reg = "ghcr.io"
+    repo = "kcl-lang/strategic_merge_patch"
+    oci_tag = "0.1.1"

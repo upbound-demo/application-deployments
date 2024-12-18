@@ -1,0 +1,29 @@
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Function
+metadata:
+spec:
+  package: xpkg.upbound.io/crossplane-contrib/function-auto-ready:v0.4.0
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+spec:
+  package: xpkg.upbound.io/upbound/provider-kubernetes:v0.16.0
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+spec:
+  package: xpkg.upbound.io/upbound/provider-family-aws:v1.18.0
+  runtimeConfigRef:
+    name: irsa-provider-aws
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+spec:
+  package: xpkg.upbound.io/upbound/provider-aws-s3:v1.18.0
+  skipDependencyResolution: true
+  runtimeConfigRef:
+    name: irsa-provider-aws
