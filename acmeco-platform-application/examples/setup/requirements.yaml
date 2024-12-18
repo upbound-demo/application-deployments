@@ -1,29 +1,59 @@
 ---
 apiVersion: pkg.crossplane.io/v1
+kind: Configuration
+metadata:
+  name:
+    upbound-demo-acmeco-platform-applications
+spec:
+  package: 218131738736.dkr.ecr.eu-west-1.amazonaws.com/upbound-demo/acmeco-platform-applications:v0.1.0
+  skipDependencyResolution: true
+---
+apiVersion: pkg.crossplane.io/v1
 kind: Function
 metadata:
+  name:
+    upbound-demo-acmeco-platform-applicationsapplication
 spec:
-  package: xpkg.upbound.io/crossplane-contrib/function-auto-ready:v0.4.0
+  package: 218131738736.dkr.ecr.eu-west-1.amazonaws.com/upbound-demo/acmeco-platform-applications_application:v0.1.0
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Function
+metadata:
+  name:
+    upbound-demo-acmeco-platform-applicationsbucket
+spec:
+  package: 218131738736.dkr.ecr.eu-west-1.amazonaws.com/upbound-demo/acmeco-platform-applications_bucket:v0.1.0
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Function
+metadata:
+  name:
+    crossplane-contrib-function-auto-ready
+spec:
+  package: 218131738736.dkr.ecr.eu-west-1.amazonaws.com/crossplane-contrib/function-auto-ready:v0.4.0
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
+  name: upbound-provider-kubernetes
 spec:
-  package: xpkg.upbound.io/upbound/provider-kubernetes:v0.16.0
+  package: 218131738736.dkr.ecr.eu-west-1.amazonaws.com/upbound/provider-kubernetes:v0.16.0
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
+  name: upbound-provider-family-aws
 spec:
-  package: xpkg.upbound.io/upbound/provider-family-aws:v1.18.0
+  package: 218131738736.dkr.ecr.eu-west-1.amazonaws.com/upbound/provider-family-aws:v1.18.0
   runtimeConfigRef:
     name: irsa-provider-aws
 ---
 apiVersion: pkg.crossplane.io/v1
 kind: Provider
 metadata:
+  name: upbound-provider-aws-s3
 spec:
-  package: xpkg.upbound.io/upbound/provider-aws-s3:v1.18.0
+  package: 218131738736.dkr.ecr.eu-west-1.amazonaws.com/upbound/provider-aws-s3:v1.18.0
   skipDependencyResolution: true
   runtimeConfigRef:
     name: irsa-provider-aws
