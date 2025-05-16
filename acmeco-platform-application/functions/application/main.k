@@ -1,7 +1,7 @@
-import k8s.api.apps.v1 as apps
-import k8s.api.core.v1 as core
-import model.io.crossplane.kubernetes.v1alpha2 as provider_kubernetes
-import model.io.upbound.platform.v1 as platform
+import kube.api.apps.v1 as apps
+import kube.api.core.v1 as core
+import models.io.crossplane.kubernetes.v1alpha2 as provider_kubernetes
+import models.io.upbound.platform.v1 as platform
 import yaml
 import strategic_merge_patch as s
 

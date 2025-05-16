@@ -9,7 +9,7 @@ spec:
   mode: Pipeline
   pipeline:
   - functionRef:
-      name: acmeco-platform-acmeco-platform-applicationsapplication
+      name: upbound-demo-acmeco-platform-applicationsapplication
     step: application
   - functionRef:
       name: crossplane-contrib-function-auto-ready

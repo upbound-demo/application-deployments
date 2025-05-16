@@ -1,0 +1,8 @@
+apiVersion: platform.upbound.io/v1
+kind: Database
+metadata:
+  name: example
+  namespace: default
+spec: 
+  paramters:
+    engine: postgres
